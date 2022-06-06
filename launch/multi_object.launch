@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<launch>
+
+  <!-- <include file="$(find ros_ign_gazebo)/launch/ign_gazebo.launch">
+    <arg name="ign_args" value="-r -v 3 /home/marius/Development/SemanticSegmentation/displayworld.sdf"/>
+  </include> -->
+
+  <node
+    pkg="ros_ign_bridge"
+    type="parameter_bridge"
+    name="$(anon ros_ign_bridge)"
+    output="screen"
+    args="/lidar@sensor_msgs/LaserScan@ignition.msgs.LaserScan 
+          /lidar/points@sensor_msgs/PointCloud2@ignition.msgs.PointCloudPacked 
+          /gpu_lidar_collision_avoidance/points@sensor_msgs/PointCloud2@ignition.msgs.PointCloudPacked 
+
+          panoptic/camera_info@sensor_msgs/CameraInfo@ignition.msgs.CameraInfo
+          /model/vehicle_blue/pose@tf2_msgs/TFMessage@ignition.msgs.Pose_V
+
+          panoptic/labels_map@sensor_msgs/Image@ignition.msgs.Image
+          panoptic2/labels_map@sensor_msgs/Image@ignition.msgs.Image
+          panoptic3/labels_map@sensor_msgs/Image@ignition.msgs.Image
+          panoptic4/labels_map@sensor_msgs/Image@ignition.msgs.Image
+          panoptic5/labels_map@sensor_msgs/Image@ignition.msgs.Image
+          panoptic6/labels_map@sensor_msgs/Image@ignition.msgs.Image
+          panoptic7/labels_map@sensor_msgs/Image@ignition.msgs.Image
+          panoptic8/labels_map@sensor_msgs/Image@ignition.msgs.Image
+          panoptic9/labels_map@sensor_msgs/Image@ignition.msgs.Image
+          panoptic10/labels_map@sensor_msgs/Image@ignition.msgs.Image
+          panoptic11/labels_map@sensor_msgs/Image@ignition.msgs.Image
+          panoptic12/labels_map@sensor_msgs/Image@ignition.msgs.Image
+          panoptic13/labels_map@sensor_msgs/Image@ignition.msgs.Image
+          panoptic14/labels_map@sensor_msgs/Image@ignition.msgs.Image
+          panoptic15/labels_map@sensor_msgs/Image@ignition.msgs.Image
+          panoptic16/labels_map@sensor_msgs/Image@ignition.msgs.Image
+          ">
+    <remap from="/model/vehicle_blue/pose" to="tf" />
+  </node>
+  
+  <node
+    type="rviz"
+    name="rviz"
+    pkg="rviz"
+    args="-d /home/marius/Development/SemanticSegmentation/rviz/gpu_lidar_bridge.rviz" />
+
+<param name="directory_param" value="$(arg directory)"/>
+<node pkg="labelling_node" name="labelling_node" type="listener.py" output="screen"> 
+</node>
+
+</launch>
+
+
+

@@ -1,6 +1,6 @@
 # semantic_simulator
 Synthetic Semantic Dataset Generator (SSDG)
-
+![](/imgs/sample.png)
 
 
 ## Build and Installation
@@ -21,9 +21,7 @@ make
 source ~/workspace/devel/setup.bash
 roslaunch launch/segmentation.launch directory:=/path/to/your/directory
 ```
-
 or 
 ```
 roslaunch launch/multi_object.launch directory:=/path/to/your/directory
-ign launch sensor_launch.ign
 ```

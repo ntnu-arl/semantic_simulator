@@ -308,17 +308,17 @@
             <sensor name='gpu_lidar_collision_avoidance' type='gpu_lidar'>
             <pose>0 0 0 0 0 0</pose>
               <topic>gpu_lidar_collision_avoidance</topic>
-              <update_rate>10</update_rate>
+              <update_rate>1</update_rate>
               <lidar>
                 <scan>
                   <horizontal>
-                    <samples>1024</samples>
+                    <samples>100</samples>
                     <resolution>1</resolution>
                     <min_angle>-1.57079632679</min_angle>
                     <max_angle>1.57079632679</max_angle>
                   </horizontal>
                   <vertical>
-                    <samples>128</samples>
+                    <samples>100</samples>
                     <resolution>0.1</resolution>
                     <min_angle>0</min_angle>
                     <max_angle>1.0</max_angle>
@@ -326,7 +326,7 @@
                 </scan>
                 <range>
                   <min>1.7</min>
-                  <max>20.0</max>
+                  <max>3.5</max>
                   <resolution>0.03</resolution>
                 </range>
               </lidar>
@@ -409,7 +409,7 @@
                 </clip>
               </camera>
               <always_on>1</always_on>
-              <update_rate>30</update_rate>
+              <update_rate>10</update_rate>
               <visualize>true</visualize>
             </sensor>
           </link>
@@ -451,7 +451,7 @@
                 </clip>
               </camera>
               <always_on>1</always_on>
-              <update_rate>30</update_rate>
+              <update_rate>10</update_rate>
               <visualize>true</visualize>
             </sensor>
           </link>
@@ -493,7 +493,7 @@
                 </clip>
               </camera>
               <always_on>1</always_on>
-              <update_rate>30</update_rate>
+              <update_rate>10</update_rate>
               <visualize>true</visualize>
             </sensor>
           </link>
@@ -536,7 +536,7 @@
                 </clip>
               </camera>
               <always_on>1</always_on>
-              <update_rate>30</update_rate>
+              <update_rate>10</update_rate>
               <visualize>true</visualize>
             </sensor>
           </link>
@@ -579,7 +579,7 @@
                 </clip>
               </camera>
               <always_on>1</always_on>
-              <update_rate>30</update_rate>
+              <update_rate>10</update_rate>
               <visualize>true</visualize>
             </sensor>
           </link>
@@ -622,7 +622,7 @@
                 </clip>
               </camera>
               <always_on>1</always_on>
-              <update_rate>30</update_rate>
+              <update_rate>10</update_rate>
               <visualize>true</visualize>
             </sensor>
           </link>
@@ -664,7 +664,7 @@
                 </clip>
               </camera>
               <always_on>1</always_on>
-              <update_rate>30</update_rate>
+              <update_rate>10</update_rate>
               <visualize>true</visualize>
             </sensor>
           </link>
@@ -707,7 +707,7 @@
                 </clip>
               </camera>
               <always_on>1</always_on>
-              <update_rate>30</update_rate>
+              <update_rate>10</update_rate>
               <visualize>true</visualize>
             </sensor>
           </link>
@@ -750,7 +750,7 @@
                 </clip>
               </camera>
               <always_on>1</always_on>
-              <update_rate>30</update_rate>
+              <update_rate>10</update_rate>
               <visualize>true</visualize>
             </sensor>
           </link>
@@ -792,7 +792,7 @@
                 </clip>
               </camera>
               <always_on>1</always_on>
-              <update_rate>30</update_rate>
+              <update_rate>10</update_rate>
               <visualize>true</visualize>
             </sensor>
           </link>
@@ -834,7 +834,7 @@
                 </clip>
               </camera>
               <always_on>1</always_on>
-              <update_rate>30</update_rate>
+              <update_rate>10</update_rate>
               <visualize>true</visualize>
             </sensor>
           </link>
@@ -877,7 +877,7 @@
                 </clip>
               </camera>
               <always_on>1</always_on>
-              <update_rate>30</update_rate>
+              <update_rate>10</update_rate>
               <visualize>true</visualize>
             </sensor>
           </link>
@@ -920,7 +920,7 @@
                 </clip>
               </camera>
               <always_on>1</always_on>
-              <update_rate>30</update_rate>
+              <update_rate>10</update_rate>
               <visualize>true</visualize>
             </sensor>
           </link>
@@ -963,7 +963,7 @@
                 </clip>
               </camera>
               <always_on>1</always_on>
-              <update_rate>30</update_rate>
+              <update_rate>10</update_rate>
               <visualize>true</visualize>
             </sensor>
           </link>
@@ -1006,7 +1006,7 @@
                 </clip>
               </camera>
               <always_on>1</always_on>
-              <update_rate>30</update_rate>
+              <update_rate>10</update_rate>
               <visualize>true</visualize>
             </sensor>
           </link>
@@ -1049,7 +1049,7 @@
                 </clip>
               </camera>
               <always_on>1</always_on>
-              <update_rate>30</update_rate>
+              <update_rate>10</update_rate>
               <visualize>true</visualize>
             </sensor>
           </link>
@@ -1270,58 +1270,8 @@
         </model>
     
     
-    <!-- Stairs, all of them have label 5 -->
-    
-    <model name="stair_0">
-    <pose>0 20 0 0 0 0</pose>
-    <static>true</static>
-    <link name="body">
-        <visual name="visual">
-            <plugin filename="ignition-gazebo-label-system" name="ignition::gazebo::systems::Label">
-                <label>50</label>
-            </plugin>
-            <geometry>
-                <mesh>
-	 	 	 	 	 	 	 	 	<scale>1.0000 1.00000 1.0</scale>  
-	 	 	 	 	 	 	 	 	<uri>meshes/stairs/stairs_0007.dae</uri>  
-                </mesh>
-            </geometry>
-                    <material>
-            <!-- red green blue alpha -->
-            <ambient>1.0 1.0 1.0 1</ambient> 
-            <diffuse>1.0 1.0 1.0 1</diffuse>
-            <specular>1.0 1.0 1.0 1</specular>
-        </material>
-        </visual>
-    </link>
-    </model>
-
     <model name="tank">
-    <pose>-30 0 0 0 0 0</pose>
-    <static>true</static>
-    <link name="body">
-        <visual name="visual">
-            <plugin filename="ignition-gazebo-label-system" name="ignition::gazebo::systems::Label">
-                <label>150</label>
-            </plugin>
-            <geometry>
-                <mesh>
-	 	 	 	 	 	 	 	 	<scale>0.1 0.1 0.1</scale>  
-	 	 	 	 	 	 	 	 	<uri>tanks/tank_20.STL</uri>  
-                </mesh>
-            </geometry>
-                    <material>
-            <!-- red green blue alpha -->
-            <ambient>1.0 1.0 1.0 1</ambient> 
-            <diffuse>1.0 1.0 1.0 1</diffuse>
-            <specular>1.0 1.0 1.0 1</specular>
-        </material>
-        </visual>
-    </link>
-    </model>
-
-    <model name="chimney">
-    <pose>0 -20 0 0 0 0</pose>
+    <pose>0 0 0 0 0 0</pose>
     <static>true</static>
     <link name="body">
         <visual name="visual">
@@ -1330,16 +1280,10 @@
             </plugin>
             <geometry>
                 <mesh>
-	 	 	 	 	 	 	 	 	<scale>0.1 0.1 0.1</scale>  
-	 	 	 	 	 	 	 	 	<uri>chimneys/chimney_20.STL</uri>  
+	 	 	 	 	 	 	 	 	<scale>0.152352 0.101017 0.179365</scale>  
+	 	 	 	 	 	 	 	 	<uri>meshes/tanks/tank_20.STL</uri>  
                 </mesh>
             </geometry>
-            <material>
-            <!-- red green blue alpha -->
-            <ambient>1.0 1.0 1.0 1</ambient> 
-            <diffuse>1.0 1.0 1.0 1</diffuse>
-            <specular>1.0 1.0 1.0 1</specular>
-        </material>
         </visual>
     </link>
     </model>
@@ -1546,150 +1490,6 @@
         </plugin>
     </model>
 
-
-      <model name='box'>
-        <link name='link'>
-        <pose>-16 29 2 0 0 0</pose>          <visual name='visual'>
-            <plugin filename="ignition-gazebo-label-system" name="ignition::gazebo::systems::Label">
-                <label>10</label>
-            </plugin>
-            <geometry>            <box><size>6 2 9</size></box></geometry>
-          </visual>
-          <collision name='collision'>
-            <geometry>            <box><size>6 2 9</size></box></geometry>
-          </collision>
-        </link>
-      </model>
-
-      <model name='sphere'>
-        <link name='link'>
-        <pose>-16 29 2 0 0 0</pose>          <visual name='visual'>
-            <plugin filename="ignition-gazebo-label-system" name="ignition::gazebo::systems::Label">
-                <label>10</label>
-            </plugin>
-            <geometry>            <sphere><radius>0</radius></sphere></geometry>
-          </visual>
-          <collision name='collision'>
-            <geometry>            <sphere><radius>0</radius></sphere></geometry>
-          </collision>
-        </link>
-      </model>
-
-      <model name='box2'>
-        <link name='link'>
-        <pose>25 11 5 0 0 0</pose>          <visual name='visual'>
-            <plugin filename="ignition-gazebo-label-system" name="ignition::gazebo::systems::Label">
-                <label>10</label>
-            </plugin>
-            <geometry>            <box><size>4 4 3</size></box></geometry>
-          </visual>
-          <collision name='collision'>
-            <geometry>            <box><size>4 4 3</size></box></geometry>
-          </collision>
-        </link>
-      </model>
-
-      <model name='sphere2'>
-        <link name='link'>
-        <pose>24 14 6 0 0 0</pose>          <visual name='visual'>
-            <plugin filename="ignition-gazebo-label-system" name="ignition::gazebo::systems::Label">
-                <label>10</label>
-            </plugin>
-            <geometry>            <sphere><radius>1.5</radius></sphere></geometry>
-          </visual>
-          <collision name='collision'>
-            <geometry>            <sphere><radius>1.5</radius></sphere></geometry>
-          </collision>
-        </link>
-      </model>
-
-      <model name='box3'>
-        <link name='link'>
-        <pose>-4 -27 1 0 0 0</pose>          <visual name='visual'>
-            <plugin filename="ignition-gazebo-label-system" name="ignition::gazebo::systems::Label">
-                <label>10</label>
-            </plugin>
-            <geometry>            <box><size>2 3 5</size></box></geometry>
-          </visual>
-          <collision name='collision'>
-            <geometry>            <box><size>2 3 5</size></box></geometry>
-          </collision>
-        </link>
-      </model>
-
-      <model name='sphere3'>
-        <link name='link'>
-        <pose>-4 -27 1 0 0 0</pose>          <visual name='visual'>
-            <plugin filename="ignition-gazebo-label-system" name="ignition::gazebo::systems::Label">
-                <label>10</label>
-            </plugin>
-            <geometry>            <sphere><radius>2</radius></sphere></geometry>
-          </visual>
-          <collision name='collision'>
-            <geometry>            <sphere><radius>2</radius></sphere></geometry>
-          </collision>
-        </link>
-      </model>
-
-
-      <model name='box4'>
-        <link name='link'>
-        <pose>-12 30 5 0 0 0</pose>          <visual name='visual'>
-            <plugin filename="ignition-gazebo-label-system" name="ignition::gazebo::systems::Label">
-                <label>10</label>
-            </plugin>
-            <geometry>            <box><size>5 3 3</size></box></geometry>
-          </visual>
-          <collision name='collision'>
-            <geometry>            <box><size>5 3 3</size></box></geometry>
-          </collision>
-        </link>
-      </model>
-
-      <model name='sphere4'>
-        <link name='link'>
-        <pose>-12 30 5 0 0 0</pose>          <visual name='visual'>
-            <plugin filename="ignition-gazebo-label-system" name="ignition::gazebo::systems::Label">
-                <label>10</label>
-            </plugin>
-            <geometry>            <sphere><radius>1</radius></sphere></geometry>
-          </visual>
-          <collision name='collision'>
-            <geometry>            <sphere><radius>1</radius></sphere></geometry>
-          </collision>
-        </link>
-      </model>
-
-  <include> 
-    <static>true</static>
-      <name>cone</name><pose>-3 15 0 0 0 0</pose>
-            <plugin filename="ignition-gazebo-label-system" name="ignition::gazebo::systems::Label">
-                <label>10</label>
-            </plugin><uri>https://fuel.ignitionrobotics.org/1.0/adlarkin/models/Construction Cone Label Test</uri>
-  </include>
-  <include>
-    <static>true</static>
-      <name>pallet</name><pose>-7 4 0 0 0 0</pose>
-            <plugin filename="ignition-gazebo-label-system" name="ignition::gazebo::systems::Label">
-                <label>10</label>
-            </plugin><uri>https://fuel.ignitionrobotics.org/1.0/MovAi/models/pallet</uri>
-      </include>
-
-<include>
-    <static>true</static>
-      <name>pallet_box</name><pose>0 8 0 0 0 0</pose>
-            <plugin filename="ignition-gazebo-label-system" name="ignition::gazebo::systems::Label">
-                <label>10</label>
-            </plugin><uri>https://fuel.ignitionrobotics.org/1.0/MovAi/models/pallet_box_mobile</uri>
-      </include>
-
-<include>
-    <static>true</static>
-      <name>electrical_box</name><pose>14 14 0 0 0 0</pose>
-            <plugin filename="ignition-gazebo-label-system" name="ignition::gazebo::systems::Label">
-                <label>10</label>
-            </plugin><uri>https://fuel.ignitionrobotics.org/1.0/openrobotics/models/Electrical Box</uri>
-      </include>
 
   </world>
 </sdf>

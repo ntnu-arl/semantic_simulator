@@ -40,11 +40,11 @@
     <remap from="/model/vehicle_blue/pose" to="tf" />
   </node>
   
-  <!-- <node
+  <node
     type="rviz"
     name="rviz"
     pkg="rviz"
-    args="-d /home/marius/Development/SemanticSegmentation/rviz/gpu_lidar_bridge.rviz" /> -->
+    args="-d /home/marius/Development/SemanticSegmentation/rviz/gpu_lidar_bridge.rviz" />
 
 <param name="directory_param" value="$(arg directory)"/>
 <node pkg="labelling_node" name="labelling_node" type="listener.py" output="screen"> 
